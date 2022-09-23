@@ -1,0 +1,11 @@
+.Component {
+  background-color: rgb(155, 53, 53);
+  padding: 2rem;
+  color: white;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
