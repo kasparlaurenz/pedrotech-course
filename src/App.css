@@ -5,6 +5,16 @@
   flex-direction: column;
   align-items: center;
 }
+
+.todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(235, 129, 129);
+  width: 100%;
+  color: white;
+}
 .task-list {
   display: flex;
   flex-direction: column;
@@ -24,7 +34,7 @@
 }
 
 .task-wrapper button {
-  background-color: red;
+  background-color: rgb(235, 129, 129);
   padding: 10px;
   width: 30px;
   height: 30px;
