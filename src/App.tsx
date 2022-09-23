@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Component from './components/Component/Component';
+import Lists from './components/Lists';
 
 function App() {
   const age = 15;
@@ -19,6 +20,7 @@ function App() {
         </>
       )}
       {isGreen && <p>Text ist grün</p>}
+      <Lists />
     </div>
   );
 }
