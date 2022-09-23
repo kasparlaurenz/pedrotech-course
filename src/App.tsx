@@ -4,6 +4,7 @@ import Component from './components/Component/Component';
 
 function App() {
   const age = 15;
+  const isGreen = true;
 
   return (
     <div className="App">
@@ -12,10 +13,10 @@ function App() {
       {age >= 18 ? (
         <Component />
       ) : (
-        <div>
+        <>
           Under age
-          <h1>HAHA</h1>
-        </div>
+          <h1 className={isGreen ? 'green' : ''}>HAHA</h1>
+        </>
       )}
     </div>
   );
