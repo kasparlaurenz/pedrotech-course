@@ -1,5 +1,6 @@
 import React from 'react';
 import type { FC } from 'react';
+import User from './User';
 
 const Lists = () => {
   const names = ['pedro', 'marc', 'dustin', 'charlie'];
@@ -19,20 +20,6 @@ const Lists = () => {
       {users.map(user => {
         return <User id={user.id} name={user.name} age={user.age} />;
       })}
-    </div>
-  );
-};
-
-interface UserProps {
-  id: number;
-  age: number;
-  name: string;
-}
-const User: FC<UserProps> = ({ id, age, name }) => {
-  return (
-    <div key={id}>
-      <p>{name}</p>
-      <span>{age}</span>
     </div>
   );
 };
