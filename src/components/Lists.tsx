@@ -16,13 +16,22 @@ const Lists = () => {
       })}
 
       {users.map(user => {
-        return (
-          <div key={user.id}>
-            <p>{user.name}</p>
-            <span>{user.age}</span>
-          </div>
-        );
+        return <User id={user.id} name={user.name} age={user.age} />;
       })}
+    </div>
+  );
+};
+
+interface UserProps {
+  id: number;
+  age: number;
+  name: string;
+}
+const User = ({ id, age, name }: UserProps) => {
+  return (
+    <div key={id}>
+      <p>{name}</p>
+      <span>{age}</span>
     </div>
   );
 };
