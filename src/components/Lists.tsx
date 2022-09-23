@@ -1,4 +1,5 @@
 import React from 'react';
+import type { FC } from 'react';
 
 const Lists = () => {
   const names = ['pedro', 'marc', 'dustin', 'charlie'];
@@ -27,7 +28,7 @@ interface UserProps {
   age: number;
   name: string;
 }
-const User = ({ id, age, name }: UserProps) => {
+const User: FC<UserProps> = ({ id, age, name }) => {
   return (
     <div key={id}>
       <p>{name}</p>
