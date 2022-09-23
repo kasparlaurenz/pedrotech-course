@@ -15,14 +15,16 @@
   width: 100%;
   color: white;
 }
+
 .task-list {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
   width: 320px;
 }
+
 .task-wrapper {
-  background-color: rgb(125, 213, 213);
+  background-color: rgb(217, 221, 221);
+  border: 0.5px solid black;
   margin-top: 10px;
   border-radius: 30px;
   padding: 10px 20px;
@@ -31,10 +33,15 @@
   justify-content: space-between;
   height: 40px;
   gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.task-wrapper--done {
+  background-color: rgb(147, 232, 157);
 }
 
 .task-wrapper button {
-  background-color: rgb(235, 129, 129);
   padding: 10px;
   width: 30px;
   height: 30px;
@@ -42,5 +49,22 @@
   border: none;
   border-radius: 100%;
   cursor: pointer;
+  color: rgb(74, 74, 74);
+  transition: all 0.2s ease-in-out;
+}
+
+.task-button--remove:hover {
+  background-color: rgb(235, 129, 129);
   color: white;
+  transform: scale(1.05);
+}
+.task-button--check:hover {
+  background-color: rgb(147, 235, 129);
+  color: white;
+  transform: scale(1.05);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
 }
