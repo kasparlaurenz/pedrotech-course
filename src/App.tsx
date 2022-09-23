@@ -18,6 +18,7 @@ function App() {
           <h1 className={isGreen ? 'green' : ''}>HAHA</h1>
         </>
       )}
+      {isGreen && <p>Text ist grün</p>}
     </div>
   );
 }
