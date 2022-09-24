@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Text from './components/Text';
 
 function App() {
   const [showText, setShowText] = useState<boolean>(false);
@@ -12,7 +13,7 @@ function App() {
       >
         Show Text
       </button>
-      {showText && <h1>Text</h1>}
+      {showText && <Text />}
     </div>
   );
 }
