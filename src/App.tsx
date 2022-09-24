@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [showText, setShowText] = useState<boolean>(false);
   return (
     <div className="App">
-      <h1>Test</h1>
+      <button
+        onClick={() => {
+          setShowText(e => !e);
+        }}
+      >
+        Show Text
+      </button>
+
+      {showText && <h1>Text</h1>}
     </div>
   );
 }
