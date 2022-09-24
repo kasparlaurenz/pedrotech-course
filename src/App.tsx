@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <button
         onClick={() => {
-          setShowText(e => !e);
+          setShowText(prevState => !prevState);
         }}
       >
         Show Text
