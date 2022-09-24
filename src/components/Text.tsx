@@ -4,8 +4,16 @@ const Text = () => {
   const [text, setText] = useState<string>('');
 
   useEffect(() => {
-    console.log('OnMount');
+    console.log('Update');
   });
+  useEffect(() => {
+    console.log('DidMount');
+  }, []);
+  useEffect(() => {
+    return () => {
+      console.log('UnMount');
+    };
+  }, []);
 
   return (
     <div>
