@@ -4,15 +4,19 @@ import axios from 'axios';
 const Axios = () => {
   const [fact, setFact] = useState<string>('');
 
-  useEffect(() => {
+  const getFact = () => {
     axios.get('https://catfact.ninja/fact').then(response => {
       setFact(response.data.fact);
     });
+  };
+
+  useEffect(() => {
+    getFact();
   }, []);
 
   return (
     <div>
-      <button>Axios</button>
+      <button onClick={getFact}>Axios</button>
 
       {fact && <p>{fact}</p>}
     </div>

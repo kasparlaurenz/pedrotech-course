@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Fetch = () => {
+  const [fact, setFact] = useState<string>('');
   fetch('https://catfact.ninja/fact')
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      return data;
     });
 
+  const getFact = () => {
+    fetch('https://catfact.ninja/fact')
+      .then(response => response.json())
+      .then(data => {
+        setFact(data.fact);
+      });
+  };
   return (
     <div>
-      <button>Fetch</button>
-      <p></p>
+      <button onClick={getFact}>Fetch</button>
+      {fact && <p>{fact}</p>}
     </div>
   );
 };
