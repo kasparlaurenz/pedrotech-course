@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Axios from './Axios';
+import Fetch from './Fetch';
 
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
+      <Fetch />
+      <Axios />
     </div>
   );
 }
