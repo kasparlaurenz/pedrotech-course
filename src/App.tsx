@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
+      <Router>
+        <Routes>
+          <Route />
+        </Routes>
+      </Router>
     </div>
   );
 }
