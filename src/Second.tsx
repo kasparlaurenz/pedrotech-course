@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Second = () => {
-  const [name, setName] = useState<{ name: string; age?: number }>({
+  const [person, setPerson] = useState<{ name: string; age: number }>({
     name: '',
+    age: 0,
   });
 
   const getAge = () => {
-    axios
-      .get(`https://api.agify.io?name=${name}`)
-      .then(response => setName({ ...name, age: response.data.age }));
+    axios.get(`https://api.agify.io?name=${person.name}`).then(response => {
+      setPerson({ name: response.data.name, age: response.data.age });
+      console.log(response);
+    });
   };
   return (
     <>
@@ -17,12 +19,12 @@ const Second = () => {
       <input
         type="text"
         placeholder="Type Name.."
-        onChange={e => setName({ ...name, name: e.target.value })}
-        value={name.name}
+        onChange={e => setPerson({ ...person, name: e.target.value })}
+        value={person.name}
       />
       <button onClick={getAge}>Get Age</button>
-      <h2>Predicted age of: {name.name}</h2>
-      <p>{name.age}</p>
+      <h2>Predicted age of: {person.name}</h2>
+      <p>{person.age}</p>
     </>
   );
 };
