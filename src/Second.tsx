@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { GET } from './util/api';
 
 const Second = () => {
   const [person, setPerson] = useState<{ name: string; age: number }>({
@@ -7,12 +8,15 @@ const Second = () => {
     age: 0,
   });
 
-  const getAge = () => {
-    axios.get(`https://api.agify.io?name=${person.name}`).then(response => {
-      setPerson({ name: response.data.name, age: response.data.age });
-      console.log(response);
-    });
+  const API_URL = `https://api.agify.io?name=${person.name}`;
+
+  const getAge = async () => {
+    const person = await GET(API_URL);
+    if (person) {
+      setPerson({ ...person, age: person.age });
+    }
   };
+
   return (
     <>
       Second
