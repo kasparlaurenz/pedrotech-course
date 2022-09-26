@@ -23,8 +23,12 @@ const Second = () => {
         value={person.name}
       />
       <button onClick={getAge}>Get Age</button>
-      <h2>Predicted age of: {person.name}</h2>
-      <p>{person.age}</p>
+      {person.age !== 0 && (
+        <>
+          <h2>Predicted age of: {person.name}</h2>
+          <p>{person.age}</p>
+        </>
+      )}
     </>
   );
 };
