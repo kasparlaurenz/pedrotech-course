@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext, AppContextTypes } from '../App';
 import ChangeProfile from '../components/ChangeProfile';
 
-type ProfileProps = {
-  username: string;
-  setUsername: React.Dispatch<React.SetStateAction<string>>;
-};
-const Profile = ({ username, setUsername }: ProfileProps) => {
+const Profile = () => {
+  const { username } = useContext(AppContext) as AppContextTypes;
   return (
     <div>
-      <h1>Profile of {username}</h1>
-      <ChangeProfile setUsername={setUsername} />
+      <h1>Profile of {username} </h1>
+      <ChangeProfile />
     </div>
   );
 };

@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext, AppContextTypes } from '../App';
 
-type HomeProps = {
-  username: string;
-};
-
-const Home = ({ username }: HomeProps) => {
+const Home = () => {
+  const { username } = useContext(AppContext) as AppContextTypes;
   return (
     <div>
       <h1>Home of</h1>
