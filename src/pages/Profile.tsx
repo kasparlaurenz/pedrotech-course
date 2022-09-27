@@ -1,9 +1,15 @@
 import React from 'react';
+import ChangeProfile from '../components/ChangeProfile';
 
-const Profile = () => {
+type ProfileProps = {
+  username: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+};
+const Profile = ({ username, setUsername }: ProfileProps) => {
   return (
     <div>
-      <h1>Profile</h1>
+      <h1>Profile of {username}</h1>
+      <ChangeProfile setUsername={setUsername} />
     </div>
   );
 };

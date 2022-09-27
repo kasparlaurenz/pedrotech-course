@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+type HomeProps = {
+  username: string;
+};
+
+const Home = ({ username }: HomeProps) => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Home of</h1>
+      <p>{username}</p>
       <Link to="/about">Go to about</Link>
     </div>
   );
