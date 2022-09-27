@@ -9,16 +9,18 @@ import Profile from './pages/Profile';
 export type AppContextTypes = {
   username: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
+  value1: string;
 };
 
 export const AppContext = createContext<AppContextTypes | null>(null);
 
 function App() {
   const [username, setUsername] = useState<string>('Laurenz');
+  const value1 = 'Peter';
 
   return (
     <div className="App">
-      <AppContext.Provider value={{ username, setUsername }}>
+      <AppContext.Provider value={{ username, setUsername, value1 }}>
         <Router>
           <Navbar />
           <Routes>

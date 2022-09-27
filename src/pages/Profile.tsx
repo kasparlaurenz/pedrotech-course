@@ -3,10 +3,12 @@ import { AppContext, AppContextTypes } from '../App';
 import ChangeProfile from '../components/ChangeProfile';
 
 const Profile = () => {
-  const { username } = useContext(AppContext) as AppContextTypes;
+  const { username, value1 } = useContext(AppContext) as AppContextTypes;
   return (
     <div>
-      <h1>Profile of {username} </h1>
+      <h1>
+        Profile of {username} {value1}
+      </h1>
       <ChangeProfile />
     </div>
   );
