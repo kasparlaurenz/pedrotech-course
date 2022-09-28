@@ -5,10 +5,15 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const Home = () => {
-  const { data, isLoading, error } = useQuery(['catfact'], async () => {
+  const {
+    data: catFact,
+    isLoading,
+    error,
+    refetch,
+  } = useQuery(['catfact'], async () => {
     return await axios.get('https://catfact.ninja/fact').then(res => res.data);
   });
-  console.log(data?.fact);
+  console.log(catFact?.fact);
   const { username } = useContext(AppContext) as AppContextTypes;
 
   if (error) {
@@ -23,7 +28,7 @@ const Home = () => {
       <h1>Home of</h1>
       <p>{username}</p>
       <Link to="/about">Go to about</Link>
-      <p>{data?.fact}</p>
+      <p>{catFact?.fact}</p>
     </div>
   );
 };
