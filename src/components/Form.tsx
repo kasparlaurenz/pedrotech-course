@@ -28,7 +28,7 @@ const Form = () => {
     formState: { errors },
   } = useForm<FormInputs>({ resolver: yupResolver(schema) });
 
-  const onSubmit = handleSubmit(data => console.log(data));
+  const onSubmit = handleSubmit((data: any) => console.log(data));
 
   return (
     <form onSubmit={onSubmit}>
